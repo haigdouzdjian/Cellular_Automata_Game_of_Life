@@ -86,12 +86,16 @@ class World:
 
 w0 = World(5,5)
 
+# Test
+
 assert len(w0.biota()) == 0
 
 w1 = World(5,5)
 
 w1.add('hello', (0,0))
 w1.add('world', (1,1))
+
+# Test
 
 assert w1.fetch((0,0)) == 'hello'
 assert w1.fetch((1,1)) == 'world'
@@ -101,10 +105,14 @@ w2 = World(5,5)
 w2.add('hello', (0,0))
 w2.add('world', (1,1))
 
+# Test
+
 assert sorted(w2.biota()) == ['hello','world']
 
 w2.remove('hello', (0,0))
 w2.remove('world', (1,1))
+
+# Test
 
 assert w2.biota() == []
 
@@ -190,13 +198,21 @@ f2.live()
 
 fw2.biota()
 
+# Test
+
 fw1 = World(5,5)
 assert len(fw1.biota()) == 0
+
+# Test
 
 f1 = Fish(fw1, (2,2))
 assert len(fw1.biota()) == 1
 
+# Test
+
 assert f1.location() == (2,2)
+
+# Test
 
 fw2 = World(5,5)
 Fish.breed_interval = 1
@@ -206,12 +222,16 @@ assert len(fw2.biota()) == 2
 
 Fish.breed_interval = 12
 
+# Test
+
 fw3 = World(5,5)
 f3 = Fish(fw3, (2,2))
 Fish(fw3, (1,1))
 Fish(fw3, (3,3))
 f3.live()
 assert len(fw3.biota()) == 2
+
+# Test
 
 fw4 = World(5,5)
 f4 = Fish(fw4, (2,2))
@@ -287,10 +307,14 @@ b3.live()
 print(len(bw3.biota()))
 print(bw3.biota())
 
+# Test
+
 bw1 = World(5,5)
 b1 = Bear(bw1, (1,1))
 assert len(bw1.biota()) == 1
 assert b1.location() == (1,1)
+
+# Test
 
 bw2 = World(5,5)
 Bear.breed_interval = 1
@@ -299,6 +323,8 @@ b2.live()
 assert len(bw2.biota()) == 2
 Bear.breed_interval = 8
 
+# Test
+
 bw3 = World(5,5)
 b3 = Bear(bw3, (2,2))
 Fish(bw3, (1,1))
@@ -306,12 +332,16 @@ Fish(bw3, (3,3))
 b3.live()
 assert len(bw3.biota()) == 2
 
+# Test
+
 bw4 = World(5,5)
 Bear.survive_without_food = 1
 b4 = Bear(bw4, (2,2))
 b4.live()
 assert len(bw4.biota()) == 0
 Bear.survive_without_food = 10
+
+# Test
 
 bw5 = World(5,5)
 b5 = Bear(bw5, (2,2))
@@ -355,6 +385,8 @@ w = wbf(10,10,3,12)
 dct = { Bear: 0, Fish: 0 }
 for x in w.biota():
     dct[x.__class__] += 1
+
+# Test
 
 assert dct[Bear] == 3
 assert dct[Fish] == 12

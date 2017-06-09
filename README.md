@@ -1,1 +1,2 @@
-# Cellular_Automata_Game_of_Life
+# Cellular Automata Game of Life
+Fish and Bears

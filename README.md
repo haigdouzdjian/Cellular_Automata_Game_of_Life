@@ -1,2 +1,3 @@
-# Cellular Automata Game of Life
-Fish and Bears
+# OOP  //  Object Oriented Programming
+
+Cellular Automata Game of Life: Fish and Bears Simulation
